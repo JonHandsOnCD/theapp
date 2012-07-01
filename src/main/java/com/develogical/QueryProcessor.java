@@ -45,7 +45,7 @@ public class QueryProcessor {
         result = squareCube.matcher(query);
         if (result.matches()) {
             String list[] = result.group(1).split(", ");
-            int answer = 0;
+            int answer = -1;
             for(String number: list)
             {
                 double current = Double.parseDouble(number);
@@ -57,7 +57,11 @@ public class QueryProcessor {
                     break;
                 }
             }
-            return String.valueOf(answer);
+
+            if (answer == -1)
+                return "";
+            else
+                return String.valueOf(answer);
         }
 
 
