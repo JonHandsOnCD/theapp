@@ -31,4 +31,9 @@ public class QueryProcessorTest {
         assertThat(queryProcessor.process("c9bcecd0: which of the following numbers is the largest: 60, 65, 978, 695"),
                 containsString("978"));
     }
+
+    @Test
+    public void knowsAboutMultiply() throws Exception {
+        assertThat(queryProcessor.process("f7b1b440: what is 42 multiplied by 11"), is("462"));
+    }
 }
