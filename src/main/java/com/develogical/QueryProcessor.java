@@ -8,6 +8,6 @@ public class QueryProcessor {
         } else if (query.contentEquals("SPA")) {
             return "wet stuff";
         }
-        return "I have no knowledge of that subject";
+        return "";
     }
 }
