@@ -16,12 +16,6 @@ public class QueryProcessor {
         if (query.contentEquals("SPA")) {
             return "wet stuff";
         }
-
-        if (Math.random() > 0.9)
-        {
-            return "I am broken";
-        }
-
         Matcher result = plus.matcher(query);
         if (result.matches()) {
             Integer first = Integer.parseInt(result.group(1));

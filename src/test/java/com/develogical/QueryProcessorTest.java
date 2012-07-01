@@ -57,6 +57,6 @@ public class QueryProcessorTest {
         String query = "f528e040: which of the following numbers is both a square and a cube: 1089, 988";
         assertThat(queryProcessor.process(query), is(""));
     }
-
-
+    
+    
 }
