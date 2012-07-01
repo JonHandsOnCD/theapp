@@ -5,6 +5,7 @@ import java.util.regex.Pattern;
 
 public class QueryProcessor {
     private Pattern plus = Pattern.compile(".{8,8}: what is (\\d+) plus (\\d+)");
+    private Pattern largest = Pattern.compile(".{8,8}: which of the following numbers is the largest: (.*)");
 
     public String process(String query) {
         if (query.contains("SPA2012")) {
@@ -20,6 +21,17 @@ public class QueryProcessor {
             return String.valueOf(first+second);
         }
 
+        result = largest.matcher(query);
+        if (result.matches()) {
+            String list[] = result.group(1).split(", ");
+            int largestSoFar = 0;
+            for(String number: list)
+            {
+                int current = Integer.parseInt(number);
+                if (current > largestSoFar) largestSoFar = current;
+            }
+            return String.valueOf(largestSoFar);
+        }
         return "";
     }
 }
