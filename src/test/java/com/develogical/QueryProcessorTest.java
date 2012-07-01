@@ -57,6 +57,11 @@ public class QueryProcessorTest {
         String query = "f528e040: which of the following numbers is both a square and a cube: 1089, 988";
         assertThat(queryProcessor.process(query), is(""));
     }
-    
-    
+
+    @Test
+    public void takesTheLastSquareAndRootWhenThereAreMultiples()
+    {
+        String query = "811f9730: which of the following numbers is both a square and a cube: 46656, 516, 80, 1";
+        assertThat(queryProcessor.process(query), is("1"));
+    }
 }

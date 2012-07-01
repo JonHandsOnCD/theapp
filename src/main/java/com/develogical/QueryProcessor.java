@@ -54,7 +54,6 @@ public class QueryProcessor {
                     && wholeNumber(Math.cbrt(current)))
                 {
                     answer = Integer.parseInt(number);
-                    break;
                 }
             }
 
