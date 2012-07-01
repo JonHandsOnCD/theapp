@@ -19,4 +19,9 @@ public class QueryProcessorTest {
     public void knowsAboutSpa() throws Exception {
         assertThat(queryProcessor.process("SPA2012"), containsString("conference"));
     }
+
+    @Test
+    public void knowsAboutPlus() throws Exception {
+        assertThat(queryProcessor.process("f7b1b440: what is 124 plus 201"), is("325"));
+    }
 }
