@@ -36,4 +36,11 @@ public class QueryProcessorTest {
     public void knowsAboutMultiply() throws Exception {
         assertThat(queryProcessor.process("f7b1b440: what is 42 multiplied by 11"), is("462"));
     }
+
+    @Test
+    public void squareAndCude()
+    {
+        String query = "1eef1d50: which of the following numbers is both a square and a cube: 519, 16, 476, 117649";
+        assertThat(queryProcessor.process(query), is("117649"));
+    }
 }
